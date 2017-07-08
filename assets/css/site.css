@@ -237,8 +237,17 @@ a.text-pink:focus, a.text-pink:hover {
   cursor: pointer;
 }
 
+div.carousel-caption {
+    text-shadow: 2px 2px 5px #000000;
+}
 
-.slider-wrapper{}
+div.carousel-caption p {
+    text-shadow: 1px 1px 1px #000000;
+}
+
+
+
+/*.slider-wrapper{}
 
 .slider{
 	height:400px;
@@ -283,4 +292,4 @@ a.text-pink:focus, a.text-pink:hover {
 	.slider{
 		width:100%; height:auto;
 	}
-}
+}*/

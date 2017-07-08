@@ -9,10 +9,10 @@ $(document).ready(function () {
 	// 	'dimensions':  			'825,400',
 	// });
 
+  //Activates the offcanvas navigation panel
   $('[data-toggle="offcanvas"]').click(function () {
     $('.row-offcanvas').toggleClass('active')
   });
-
 
   //Handles the carousel thumbnails
   $('[id^=carousel-selector-]').click(function() {
@@ -21,4 +21,15 @@ $(document).ready(function () {
   });
 
 
+});
+
+
+$(document).bind('keyup', function(e) {
+  //Allows keyboard control of the carousel
+  if (e.which==39) {
+      $('.carousel').carousel('next');
+  }
+  else if(e.which==37){
+      $('.carousel').carousel('prev');
+  }
 });
