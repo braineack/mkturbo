@@ -20,7 +20,6 @@ $(document).ready(function () {
     	$('.carousel').carousel(parseInt(id_selector));
   });
 
-
 });
 
 

@@ -96,13 +96,13 @@
           <div class="col-12">
             <div class="card mb-4">
               <div class="card-block">
-                  <img src="assets/img/oillines/oillinekit.jpg" class="img-fluid" alt="Responsive image">
+                  <img src="assets/img/oillines/oillinekit.jpg" class="img-fluid" alt="Responsive image" data-toggle="modal" data-target="#imageModal" id="image-1">
               </div>
             </div>
 
             <div class="card mb-4">
               <div class="card-block">
-                  <img src="assets/img/oillines/oilline_fittings.jpg" class="img-fluid" alt="Responsive image">
+                  <img src="assets/img/oillines/oilline_fittings.jpg" class="img-fluid" alt="Responsive image" data-toggle="modal" data-target="#imageModal" id="image-2">
               </div>
             </div>
           </div>
@@ -131,6 +131,26 @@
 
     </div><!--/.container-->
 
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="imageModalTitle"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="" class="img-fluid" alt="Responsive image" id="imageModalImage">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"><a href="" target="_blank" id="imageModalUrl">View Full Size</a></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -139,5 +159,25 @@
     <script type="text/javascript" src="assets/vendor/fractionslider/jquery.fractionslider.js"></script>
     <!-- Custom JQuery -->
     <script src="assets/scripts/site.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //Handles the popup modal
+            $('[id^=image-]').click(function() {
+              var image_selector = $(this).attr("id").split('-').pop();
+                if (image_selector == "1") {
+                  $('#imageModalTitle').text('MKturbo Oil Line Kit');
+                  $('#imageModalImage').attr('src','assets/img/oillines/oillinekit_full.jpg');
+                  $('#imageModalUrl').attr('href','assets/img/oillines/oillinekit_full.jpg');
+                }
+                if (image_selector == "2") {
+                  $('#imageModalTitle').text('MKturbo Oil Line Kit Fittings and Hardware');
+                  $('#imageModalImage').attr('src','assets/img/oillines/oilline_fittings_full.jpg');
+                  $('#imageModalUrl').attr('href','assets/img/oillines/oilline_fittings_full.jpg');
+                }
+            });
+          });
+    </script>
+
   </body>
 </html>
